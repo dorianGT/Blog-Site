@@ -1,15 +1,12 @@
-<!-- blog/templates/blog/create_post.html -->
-
+<!-- blog/templates/blog/liked_posts.html -->
 {% extends "base.html" %}
 
 {% block page_content %}
     <section class="corps">
-        <div class="create-post">
-            <h2 style="text-decoration: underline;">Créer un nouveau post</h2>
-            <a href="{% url 'create_post' %}" class="btn">Créer</a>
-        </div>
-
-        {% for post in user_posts %}
+        {% block page_title %}
+        <h2 style="text-decoration: underline;">{{ category }}</h2>
+        {% endblock page_title %}
+        {% for post in liked_posts %}
             <div class="game">
                 <h2>{{ post.title }}</h2>
                 <div class="info">
@@ -26,13 +23,6 @@
                         </p>
                         <p>{{ post.body | slice:":400" }}...</p>
                         <a href="{% url 'blog_detail' post.pk %}" class="btn">En savoir plus</a>
-
-                        <!-- Liens pour modifier et supprimer le post -->
-                        <a href="{% url 'edit_post' post.pk %}" class="btn">Modifier</a>
-                        <form action="{% url 'delete_post' post.pk %}" method="post" style="display: inline;">
-                            {% csrf_token %}
-                            <button type="submit" class="btn">Supprimer</button>
-                        </form>
                     </div>
                 </div>
             </div>

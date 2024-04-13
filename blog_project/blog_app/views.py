@@ -76,6 +76,11 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
 @login_required
+def liked_posts(request):
+    liked_posts = request.user.liked_posts.all()
+    return render(request, 'blog/liked_posts.html', {'liked_posts': liked_posts})
+
+@login_required
 def like_post(request, pk):
     post = Post.objects.get(pk=pk)
     if request.method == 'POST':

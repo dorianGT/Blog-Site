@@ -34,4 +34,5 @@ urlpatterns = [
     path('user_posts/', views.user_posts, name='user_posts'),  # Ajoutez cette ligne pour afficher les posts de l'utilisateur
     path('post/<int:pk>/edit/', views.edit_post, name='edit_post'),  # Ajoutez cette ligne pour modifier le post
     path('post/<int:pk>/delete/', views.delete_post, name='delete_post'),  # Ajoutez cette ligne pour supprimer le post
+    path('liked_posts/', views.liked_posts, name='liked_posts'),  # Ajouter cette ligne pour afficher les posts aimés
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

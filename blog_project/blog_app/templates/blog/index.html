@@ -2,16 +2,15 @@
 
 {% extends "base.html" %}
 
-
 {% block page_content %}
     <section class="corps">
+        {% block page_title %}{% endblock %}  <!-- Ajoutez le bloc pour le titre de la catégorie -->
         {% block posts %}
             {% for post in posts %}
                 <div class="game">
                     <h2>{{ post.title }}</h2>
                     <div class="info">
                         <img src="{{ post.image.url }}" alt="{{ post.title }} image">
-
                         <div class="descriptionAndBtn">
                             <p>{{ post.created_on.date }}</p>
                             <p>Categories:
