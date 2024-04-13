@@ -1,0 +1,14 @@
+<!-- blog/templates/blog/edit_post.html -->
+{% extends "base.html" %}
+{% block page_content %}
+    <section class="corps">
+        <div class="edit-post">
+            <h2>Modifier le post</h2>
+            <form id="edit-post-form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+            </form>
+        </div>
+    </section>
+{% endblock page_content %}

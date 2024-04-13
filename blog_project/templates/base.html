@@ -1,0 +1,87 @@
+<!-- templates/base.html -->
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Jeux Vidéo</title>		
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/icon.png' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylesV2.css' %}">
+    <script src="{% static 'js/app.js' %}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+		<h1>Blog Jeux Vidéo</h1>
+		<a href="index.html">
+			<img src="{% static 'images/logo.png' %}" alt="Logo">
+		</a>
+	</header>
+
+	<div class = "navbar">
+		<ul>
+            <li><a class="nav-link" href="{% url 'blog_index' %}">Home</a></li>
+			{% if user.is_authenticated %}
+			<li><a class="nav-link" href="{% url 'user_posts' %}">Posts</a></li>
+			{% endif %}
+			<li><a class="nav-link" href="contact.html">Contact</a></li>
+		</ul>
+		<div class="toggle">
+			<input type="checkbox" id="darkmode-toggle" class="darkmode-toggle-checkbox"/>
+			<label for="darkmode-toggle" class="darkmode-toggle-label">
+			  <span class="material-symbols-outlined moon">
+				dark_mode
+			  </span>
+			  <span class="material-symbols-outlined sun">
+				light_mode
+			  </span>
+			</label>
+		</div>
+		<div class="dropdown">
+			<span class="material-symbols-outlined account_circle">
+				account_circle
+			</span>
+			<div class="dropdown-content" id="dropdownContent">
+				{% if user.is_authenticated %}
+					<!-- Si l'utilisateur est connecté, afficher le bouton de déconnexion -->
+					<!-- <a id="logout-link" href="{% url 'blog_deconnexion' %}">{% csrf_token %}Déconnexion</a> -->
+
+					<a id="logout-link" href="{% url 'blog_deconnexion' %}">
+						<span class="material-symbols-outlined">logout</span>
+						Déconnexion
+					</a>		
+				{% else %}
+					<!-- Si l'utilisateur n'est pas connecté, afficher les boutons de connexion et d'inscription -->
+					<a href="{% url 'blog_connexion' %}" class="link-account">  
+						<span class="material-symbols-outlined">
+							login
+						</span>
+						Connexion
+					</a>
+					<a href="{% url 'blog_inscription' %}" class="link-account">
+						<span class="material-symbols-outlined">
+							settings
+						</span>
+						Inscription
+					</a>
+				{% endif %}
+			</div>
+		</div>
+		
+	</div>
+		
+    {% block page_content %}{% endblock page_content %}
+
+	<footer>
+		<p>Réalisé par Dorian GROUTEAU & Olivier JIANG - Tous droits réservés</p>
+		<p>doriangrouteaupro@gmail.com</p>
+		<p><a href="https://linkedin.com/">LinkedIn</a></p>
+	</footer>
+</body>
+</html>

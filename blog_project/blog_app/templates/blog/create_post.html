@@ -1,0 +1,24 @@
+<!-- blog/templates/blog/create_post.html -->
+{% extends "base.html" %}
+{% block page_content %}
+    <section class="corps">
+        <div class="create-post">
+            <h2>Créer un nouveau post</h2>
+            <form id="create-post-form" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Publier</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        function validateForm() {
+            var imageInput = document.querySelector('#id_image');
+            if (imageInput.files.length === 0) {
+                alert('Veuillez sélectionner une image.');
+                return false; // Empêche l'envoi du formulaire
+            }
+            return true; // Permet l'envoi du formulaire
+        }
+    </script>
+{% endblock page_content %}

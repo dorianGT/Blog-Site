@@ -1,0 +1,87 @@
+<!--  blog/templates/blog/detail.html -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesSubPages.css' %}">
+
+    <section class="corpsGameInfo">
+        <div class="gamePanel">
+            <h2>{{ post.title }}</h2>
+                    <!-- Bouton "Like" -->
+        {% if user.is_authenticated %}
+            <div id="like-section">
+                <button id="like-button" data-post-id="{{ post.id }}" {% if user in post.likes.all %}class="liked"{% endif %}>
+                    {% if user in post.likes.all %}
+                        Unlike
+                    {% else %}
+                        Like
+                    {% endif %}
+                </button>
+                <span id="like-count">{{ post.likes.count }}</span>
+            </div>
+        {% endif %}
+            <p>{{ post.created_on.date }} | Categories:
+                {% for category in post.categories.all %}
+                    <a href="{% url 'blog_category' category.name %}">
+                        {{ category.name }}
+                    </a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <div class="gameInfoPanel">
+                <div class="gameInfo">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }} image">
+                    <h3>Informations sur le jeu</h3>
+                    <ul>
+                        <li><strong>Créateur :</strong> Nom du créateur</li>
+                        <li><strong>Plateformes :</strong> Plateforme 1, Plateforme 2, Plateforme 3</li>
+                        <li><strong>Date de sortie :</strong> Date de sortie du jeu</li>
+                        <li><strong>Genre :</strong> Genre du jeu</li>
+                    </ul>
+                    <a href="https://www.dofus.com/fr/prehome" class="btn">Lien</a>
+                </div>
+                <div class="description">
+                    <p>{{ post.body | linebreaks }}</p>
+                    <iframe width="672" height="378" src="https://www.youtube.com/embed/3UjY4xzwC-g?si=_JWoTxr0T1fRT9Da" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="comment-section-title">Leave a comment:</h3>
+        {% if user.is_authenticated %}
+        <form method="post" class="comment-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.body }}
+            </div>
+            <button type="submit" class="btn btn-primary" data-post-id="{{ post.id }}">Submit</button>
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'blog_connexion' %}">log in</a> to leave a comment.</p>
+    {% endif %}
+    
+        
+    <div class="comment-section">
+        <h3 class="comment-section-title">Comments:</h3>
+        {% for comment in comments %}
+            <div class="comment-container">
+                <p class="comment-header">
+                    On {{ comment.created_on.date }} <b>{{ comment.author }}</b> wrote:
+                </p>
+                <p class="comment-body">
+                    {{ comment.body | linebreaks }}
+                </p>
+                <hr class="comment-separator">
+            </div>
+        {% endfor %}
+    </div>
+    
+          
+    </section>
+
+{% endblock page_content %}
+
+
+
+

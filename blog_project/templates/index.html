@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Jeux Vidéo</title>		
+	<link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
+	<link rel="stylesheet" href="Styles/stylesV2.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<script src="js/app.js"></script>
+</head>
+<body>
+
+    <header>
+		<h1>Blog Jeux Vidéo</h1>
+		<a href="index.html">
+			<img src="images/logo.png" alt="Logo">
+		</a>
+	</header>
+
+	<div class = "navbar">
+		<ul>
+			<li><a class="nav-link" href="index.html">Home</a></li>
+			<li><a class="nav-link" href="#">News</a></li>
+			<li><a class="nav-link" href="contact.html">Contact</a></li>
+		</ul>
+		<div class="toggle">
+			<input type="checkbox" id="darkmode-toggle" class="darkmode-toggle-checkbox"/>
+			<label for="darkmode-toggle" class="darkmode-toggle-label">
+			  <span class="material-symbols-outlined moon">
+				dark_mode
+			  </span>
+			  <span class="material-symbols-outlined sun">
+				light_mode
+			  </span>
+			</label>
+		</div>
+		<div class="dropdown">
+			<span class="material-symbols-outlined account_circle">
+			  account_circle
+			</span>
+			<div class="dropdown-content" id="dropdownContent">
+			  <a href="#" class="link-account">	
+				<span class="material-symbols-outlined">
+					login
+				</span>
+				Connexion
+			  </a>
+			  <a href="#" class="link-account">
+				<span class="material-symbols-outlined">
+					logout
+				</span>
+				Deconnexion
+			  </a>
+			  <a href="#" class="link-account">
+				<span class="material-symbols-outlined">
+					settings
+				</span>
+				Paramètres
+			  </a>
+			</div>
+		</div>
+	</div>
+		
+			
+    <section class="corps">
+		<div class="BarPrincipal">
+
+			<div class="article">
+
+				<h2>Jeux du moment</h2>
+
+				<div class="slideshow-container">
+					<div class="mySlides fade">
+						<a href="honkaistarrail.html"><img src="images/honkaistarrail.jpg" alt="Honkai"></a>
+					</div>
+					
+					<div class="mySlides fade">
+						<a href="lol.html"><img src="images/lol.jpg" alt="Lol"></a>
+					</div>
+					
+					<div class="mySlides fade">
+						<a href="genshinimpact.html"><img src="images/genshinimpact.jpg" alt="Genshin"></a>
+					</div>
+					
+					<div class="dot-container">
+						<span class="dot"></span> 
+						<span class="dot"></span> 
+						<span class="dot"></span> 
+					</div>
+				</div>
+			</div>
+		
+			<div class="article">
+				<h2>Nouveautés</h2>
+				<div class="image">
+					<a href="dofus.html"><img src="images/dofus.jpg" alt="Dofus"></a>
+				</div>
+				<div class="image">
+					<a href="lol.html"><img src="images/lol.jpg" alt="Lol"></a>
+				</div>
+				<div class="image">
+					<a href="genshinimpact.html"><img src="images/genshinimpact.jpg" alt="Genshin"></a>
+				</div>
+				<div class="image">
+					<a href="honkaistarrail.html"><img src="images/honkaistarrail.jpg" alt="Honkai"></a>
+				</div>
+			</div>
+
+		</div>
+		
+		</br>
+
+		<div class="game">
+			<h2>Dofus</h2>
+			<div class="info">
+				<img src="images/dofus.jpg" alt="Dofus">
+				<div class="descriptionAndBtn">
+					<p>Description du Jeu 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut finibus turpis. Fusce placerat convallis ipsum venenatis ornare. Curabitur nec laoreet elit. Sed ut ullamcorper quam. Curabitur leo nisl, molestie sed semper et, suscipit tempor odio. Quisque urna elit, rutrum sit amet sollicitudin vitae, accumsan sit amet arcu. Sed vulputate egestas ligula rhoncus laoreet.</p>		
+					<a href="dofus.html" class="btn">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+			
+		<div class="game">
+			<h2>Genshin Impact</h2>
+			<div class="info">
+				<img src="images/genshinimpact.jpg" alt="Genshin Impact">
+				<div class="descriptionAndBtn">
+					<p>Description du Jeu 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut finibus turpis. Fusce placerat convallis ipsum venenatis ornare. Curabitur nec laoreet elit. Sed ut ullamcorper quam. Curabitur leo nisl, molestie sed semper et, suscipit tempor odio. Quisque urna elit, rutrum sit amet sollicitudin vitae, accumsan sit amet arcu. Sed vulputate egestas ligula rhoncus laoreet.</p>		
+					<a href="genshinimpact.html" class="btn">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="game">
+			<h2>Honkai Star Rail</h2>
+			<div class="info">
+				<img src="images/honkaistarrail.jpg" alt="Honkai Star Rail">
+				<div class="descriptionAndBtn">
+					<p>Description du Jeu 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut finibus turpis. Fusce placerat convallis ipsum venenatis ornare. Curabitur nec laoreet elit. Sed ut ullamcorper quam. Curabitur leo nisl, molestie sed semper et, suscipit tempor odio. Quisque urna elit, rutrum sit amet sollicitudin vitae, accumsan sit amet arcu. Sed vulputate egestas ligula rhoncus laoreet.</p>		
+					<a href="honkaistarrail.html" class="btn">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="game">
+			<h2>League Of Legends</h2>
+			<div class="info">
+				<img src="images/lol.jpg" alt="League Of Legends">
+				<div class="descriptionAndBtn">
+					<p>Description du Jeu 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut finibus turpis. Fusce placerat convallis ipsum venenatis ornare. Curabitur nec laoreet elit. Sed ut ullamcorper quam. Curabitur leo nisl, molestie sed semper et, suscipit tempor odio. Quisque urna elit, rutrum sit amet sollicitudin vitae, accumsan sit amet arcu. Sed vulputate egestas ligula rhoncus laoreet.</p>		
+					<a href="lol.html" class="btn">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+    </section>
+
+
+	<footer>
+		<p>Réalisé par Dorian GROUTEAU - Tous droits réservés</p>
+		<p>doriangrouteaupro@gmail.com</p>
+		<p><a href="https://linkedin.com/">LinkedIn</a></p>
+	</footer>	
+</body>
+</html>

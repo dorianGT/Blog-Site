@@ -1,0 +1,164 @@
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 900;
+    font-size: 40px;
+    text-align: center;
+}
+
+.corpsGameInfo {
+	padding: 20px;
+}
+
+.gamePanel {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.gamePanel .btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Merriweather, sans-serif;
+    font-weight: 400;
+    transition: background-color 0.3s;
+	width: 50px;
+	box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.gamePanel img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    filter:sepia();
+}
+
+.gamePanel p {
+    font-family: Merriweather, sans-serif;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.gamePanel .btn:hover {
+    background-color: #666;
+}
+
+.gamePanel .gameInfoPanel {
+    display: flex;
+    align-items: start;
+}
+
+.gamePanel .gameInfo {
+    align-items: center;
+	margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #ccc;
+}
+
+.gamePanel .description {
+    align-items: center;
+	margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5px;
+    border-left: 1px solid #ccc;
+}
+
+.gameInfo h3 {
+    padding-top: 30px;
+    margin-top: 0;
+    font-family: Merriweather, sans-serif;
+    font-weight: 900;
+    color:var(--h3-color)
+}
+
+.gameInfo ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.gameInfo ul li {
+    font-family: Merriweather, sans-serif;
+    font-weight: 400;
+    color:black;
+}
+
+.gamePanel p{
+    color: black;
+}
+
+/* Style du titre */
+.comment-section-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style du formulaire */
+.comment-form {
+    margin-bottom: 20px;
+}
+
+.comment-form .form-group {
+    margin-bottom: 15px;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+    width: 100%;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ebebeb;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Merriweather, sans-serif;
+    font-weight: 400;
+    transition: background-color 0.3s;
+    width: 200px;
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+}
+
+.comment-form button:hover {
+    background-color: #666;
+}
+
+/* Style des commentaires */
+.comment-container {
+    margin-bottom: 20px;
+}
+
+.comment-header {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.comment-body {
+    font-size: 14px;
+    color: #555;
+}
+
+.comment-separator {
+    border-color: #ccc;
+}

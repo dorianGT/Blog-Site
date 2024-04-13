@@ -1,0 +1,15 @@
+<!-- blog/templates/blog/index.html -->
+
+{% extends "base.html" %}
+
+
+{% block page_content %}
+    <section class="corps">
+        <h2>Inscription</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Inscription</button>
+        </form>
+    </section>
+{% endblock page_content %}

@@ -1,0 +1,26 @@
+<!-- blog/templates/blog/create_post.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<section class="corps">
+<a href="{% url 'create_post' %}">Créer</a>
+
+{% for post in user_posts %}
+
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <!-- Ajoutez d'autres détails du post ici -->
+
+        <!-- Liens pour modifier et supprimer le post -->
+        <a href="{% url 'edit_post' post.pk %}">Modifier</a>
+        <form action="{% url 'delete_post' post.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Supprimer</button>
+        </form>
+            </div>
+{% endfor %}
+</section>
+
+{% endblock page_content %}

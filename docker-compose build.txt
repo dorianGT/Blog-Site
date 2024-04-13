@@ -1,0 +1,26 @@
+docker-compose build
+docker-compose up
+
+python add_data.py
+
+python manage.py makemigrations monapp
+python manage.py migrate
+
+python manage.py runserver 
+
+pip freeze > requirements.txt 
+
+py -m venv blog-site
+blog-site\Scripts\activate.bat 
+django-admin startproject blogsite
+python manage.py startapp monapp
+
+
+
+
+
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl get pods
+kubectl get services
